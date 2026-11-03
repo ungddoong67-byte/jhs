@@ -1,0 +1,32 @@
+name: 지역폴더 Fast-Delivery Generator
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # 수동 실행 버튼 (테스트용)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Generator Script
+        # 사장님이 만든 generator.py를 직접 실행합니다.
+        run: python generator.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Quick-Pickup-Bot"
+          git config --global user.email "bot@8222quick.com"
+          git add .
+          # 변화가 있을 때만 커밋하고 푸시합니다.
+          git commit -m "🚀 신속한 배송 평택 지점 자동 업데이트" || exit 0
+          git push origin main
