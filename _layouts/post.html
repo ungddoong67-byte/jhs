@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+    {% assign town = page.town | default: "화성" %}
+    {% assign district = page.district | default: "" %}
+    {% assign service = page.service | default: "퀵서비스" %}
+    {% assign town_full = page.town_full | default: "경기도 화성시 전지역" %}
+
+    {% assign site_url = "https://화성퀵서비스.8222quick.com" %}
+    {% assign page_title = page.title | default: "화성퀵서비스 신속한 배송" %}
+
+    <title>{{ page_title | escape }} | {{ town | escape }} 퀵서비스 신속한 배송</title>
+
+    <meta name="description"
+          content="{{ town_full | escape }} {{ service | escape }} 이용 안내. 화성특례시 전지역 오토바이퀵, 다마스, 라보, 1톤용달 배송 상담.">
+
+    <meta name="keywords"
+          content="{{ town | escape }} 퀵서비스, {{ town | escape }} 퀵, 화성퀵서비스, 화성시 퀵, {{ district | escape }} 퀵서비스, {{ service | escape }}, 신속한 배송">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="화성퀵서비스">
+    <meta name="theme-color" content="#B9CEEB">
+
+    <link rel="canonical" href="{{ site_url }}{{ page.url }}">
+
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="화성퀵서비스">
+    <meta property="og:title" content="{{ page_title | escape }} | 화성 신속한 배송">
+    <meta property="og:description"
+          content="{{ town_full | escape }} 지역 퀵서비스 및 화물 배송 이용 안내">
+    <meta property="og:image" content="{{ site_url }}/public/main_banner.jpg">
+    <meta property="og:url" content="{{ site_url }}{{ page.url }}">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title | escape }}">
+    <meta name="twitter:description"
+          content="{{ town_full | escape }} 퀵서비스 배송 안내">
+    <meta name="twitter:image" content="{{ site_url }}/public/main_banner.jpg">
+
+    <script src="/file/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/file/base.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #B9CEEB !important;
+        }
+
+        .post-container {
+            padding: 100px 20px 60px 20px !important;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #B9CEEB;
+            min-height: 100vh;
+        }
+
+        .post-header {
+            border-bottom: 2px solid #004a99;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .post-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .post-meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        .post-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #222;
+            word-break: keep-all;
+            overflow-wrap: anywhere;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .call-action {
+            margin-top: 50px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            text-align: center;
+            border: 1px dashed #004a99;
+        }
+
+        .btn-action {
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .btn-tel {
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #d32f2f;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .btn-home {
+            margin-top: 40px;
+            padding: 10px 40px;
+            background: #004a99;
+            color: #fff !important;
+            font-size: 1rem;
+        }
+
+        .region-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.35);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .post-container {
+                padding: 85px 15px 40px 15px !important;
+            }
+
+            .post-title {
+                font-size: 1.4rem;
+            }
+
+            .post-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main_header">
+        <ul class="logo">
+            <li><a href="/" aria-label="화성퀵서비스 홈"></a></li>
+        </ul>
+
+        <ul class="app_down active">
+            <li class="nv">
+                <a href="sms:010-2730-5525" aria-label="문자 상담"></a>
+            </li>
+
+            <li class="kakao">
+                <a href="https://pf.kakao.com/_xnRKLxb"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="카카오톡 상담"></a>
+            </li>
+
+            <li class="tel">
+                <a href="tel:1661-4262" aria-label="전화 상담"></a>
+            </li>
+        </ul>
+    </header>
+
+
+    <article class="post-container">
+
+        <header class="post-header">
+
+            <span style="
+                display:inline-block;
+                padding:3px 10px;
+                background:#004a99;
+                color:#fff;
+                border-radius:4px;
+                font-weight:bold;
+                font-size:0.8rem;
+                margin-bottom:10px;
+            ">
+                화성특례시 신속한 배송 퀵서비스 안내
+            </span>
+
+            <h1 class="post-title">
+                {{ page_title | escape }}
+            </h1>
+
+            <div class="post-meta">
+                <span>📍 지역: {{ town_full | escape }}</span>
+                <br>
+                {% if district != "" %}
+                <span>🏙️ 권역: {{ district | escape }}</span>
+                <br>
+                {% endif %}
+                <span>📅 게시일: {{ page.date | date: "%Y-%m-%d" }}</span>
+            </div>
+
+        </header>
+
+
+        <div class="post-content">
+
+            <h2>🚀 {{ town | escape }} 퀵서비스 안내</h2>
+
+            <p>
+                화성퀵서비스의
+                <strong>{{ town | escape }}</strong>
+                지역 배송 서비스 안내입니다.
+            </p>
+
+            <p>
+                {{ town_full | escape }} 지역에서
+                서류, 소형 물품, 기업 화물 등의 배송이 필요하시면
+                출발지와 도착지, 화물 종류를 알려주세요.
+                운송 조건에 맞는 차량과 배송 방법을 안내해 드립니다.
+            </p>
+
+
+            <h2>✅ {{ town | escape }} {{ service | escape }} 서비스</h2>
+
+            {% assign vehicle = "퀵서비스" %}
+
+            {% if service contains "라보" %}
+                {% assign vehicle = "라보퀵" %}
+            {% elsif service contains "다마스" %}
+                {% assign vehicle = "다마스퀵" %}
+            {% elsif service contains "오토바이" %}
+                {% assign vehicle = "오토바이퀵" %}
+            {% elsif service contains "1톤" or service contains "용달" %}
+                {% assign vehicle = "1톤용달" %}
+            {% elsif service contains "기업" %}
+                {% assign vehicle = "기업화물배송" %}
+            {% elsif service contains "당일" %}
+                {% assign vehicle = "당일배송" %}
+            {% elsif service contains "긴급" %}
+                {% assign vehicle = "긴급배송" %}
+            {% endif %}
+
+            <p>
+                {{ town | escape }} 인근에서 이용할 수 있는
+                <strong>{{ vehicle | escape }}</strong>
+                배송 상담을 제공합니다.
+            </p>
+
+            <ul>
+                <li><strong>오토바이퀵:</strong> 서류 및 소형 물품</li>
+                <li><strong>다마스퀵:</strong> 박스 및 소형 화물</li>
+                <li><strong>라보퀵:</strong> 부피가 있는 화물</li>
+                <li><strong>1톤용달:</strong> 기업 및 일반 화물</li>
+            </ul>
+
+            <p>
+                실제 배차 가능 여부와 요금은
+                출발지, 도착지, 화물 크기 및 요청 시간에 따라 달라집니다.
+            </p>
+
+
+            <section class="region-info">
+
+                <h2>📍 화성특례시 주요 배송 권역</h2>
+
+                <p>
+                    <strong>만세구</strong><br>
+                    향남읍, 남양읍, 우정읍, 마도면,
+                    송산면, 서신면, 팔탄면, 장안면
+                </p>
+
+                <p>
+                    <strong>효행구</strong><br>
+                    봉담읍, 매송면, 비봉면,
+                    정남면, 기배동
+                </p>
+
+                <p>
+                    <strong>병점구</strong><br>
+                    진안동, 병점1동, 병점2동,
+                    반월동, 화산동
+                </p>
+
+                <p>
+                    <strong>동탄구</strong><br>
+                    동탄1동, 동탄2동, 동탄3동,
+                    동탄4동, 동탄5동, 동탄6동,
+                    동탄7동, 동탄8동, 동탄9동
+                </p>
+
+            </section>
+
+
+            <h2>☎️ 화성 전지역 퀵서비스 접수 안내</h2>
+
+            <p>
+                화성시 만세구, 효행구, 병점구, 동탄구 등
+                전지역의 퀵서비스 및 화물 배송 상담이 가능합니다.
+            </p>
+
+            <p>
+                <strong>대표번호: 1661-4262</strong><br>
+                지원차종: 오토바이, 다마스, 라보, 1톤용달
+            </p>
+
+            <p>
+                배차 가능 시간과 방문 픽업 시간은
+                상담을 통해 확인해 주세요.
+            </p>
+
+        </div>
+
+
+        <section class="call-action">
+
+            <h2 style="font-size:1.2rem; color:#004a99;">
+                📢 {{ town | escape }} 퀵서비스 이용 안내
+            </h2>
+
+            <p style="margin-top:10px; color:#333;">
+                {{ town_full | escape }}<br>
+                화물 종류와 배송 위치를 알려주시면
+                이용 가능한 운송 서비스를 안내해 드립니다.
+            </p>
+
+            <a href="tel:1661-4262"
+               class="btn-action btn-tel">
+                ☎ 전화 상담: 1661-4262
+            </a>
+
+        </section>
+
+
+        <div style="text-align: center;">
+            <a href="/" class="btn-action btn-home">
+                🏠 메인 페이지로 돌아가기
+            </a>
+        </div>
+
+    </article>
+
+
+    <footer style="
+        background:#1a1a1a;
+        padding:30px 20px;
+        color:#888;
+        font-size:0.8rem;
+        text-align:center;
+    ">
+        <p>
+            © 2026 화성퀵서비스. All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>

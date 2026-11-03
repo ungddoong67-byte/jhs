@@ -1,0 +1,858 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2018. 7. 02, 오후 6:15:22
+    Author     : mau
+*/
+@font-face { font-family: 'Godo-M'; font-style: normal; font-weight: 400; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff'); } 
+@font-face { font-family: 'Godo-B'; font-style: normal; font-weight: 700; src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff'); } 
+@font-face{
+   font-family:'Spoqa-B';
+   src:url('/assets/celeb/font/SpoqaHanSansBold.eot');
+   src:url('/assets/celeb/font/SpoqaHanSansBold.woff');
+   src:url('/assets/celeb/font/SpoqaHanSansBold.woff2');
+}
+@font-face{
+   font-family:'Spoqa-L';
+   src:url('/assets/celeb/font/SpoqaHanSansLight.eot');
+   src:url('/assets/celeb/font/SpoqaHanSansLight.woff');
+   src:url('/assets/celeb/font/SpoqaHanSansLight.woff2');
+}
+@font-face{
+   font-family:'Spoqa-R';
+   src:url('/assets/celeb/font/SpoqaHanSansRegular.eot');
+   src:url('/assets/celeb/font/SpoqaHanSansRegular.woff');
+   src:url('/assets/celeb/font/SpoqaHanSansRegular.woff2');
+}
+@font-face{
+   font-family:'Spoqa-T';
+   src:url('/assets/celeb/font/SpoqaHanSansThin.eot');
+   src:url('/assets/celeb/font/SpoqaHanSansThin.woff');
+   src:url('/assets/celeb/font/SpoqaHanSansThin.woff2');
+}
+body{font-family:'Spoqa-R';}
+*{margin:0; padding:0;}
+ul, li{list-style:none; margin:0;}
+input[type=text],input[type=password],input[type=email]{box-shadow: none; outline:none;}
+input[type=text]:focus,input[type=password]:focus,input[type=email]:focus{box-shadow:none;}
+a{text-decoration:none; color:#000;}
+a:hover{text-decoration:none; color:#000;}
+h1,h2,h3,h4,h5,h6{font-size:1em; font-weight:normal; margin:0 auto;}
+em{font-style: normal;}
+.store_container{text-align:center; margin:0 auto; min-height:800px;}
+.blind{display:none;}
+input, select, textarea{
+   border:none;
+   box-shadow:none;
+   outline:none;
+}
+select{font-size:.85em;}
+
+.float-left{float:left;}
+.float-right{float:right;}
+
+/* font설정 */
+.title{font-family: 'Godo-B', sans-serif;}
+.sub_title{font-family: 'Godo-M', sans-serif;}
+.title,
+.sub_title,
+.text{color:#fff; text-align:left;}
+.text{letter-spacing: -.05em;}
+
+/** 헤더영역 **/
+.main_header{
+   overflow:hidden;
+   position:fixed;
+   top:0; left:0; right:0;
+   z-index:9999;
+}
+.main_header ul{position:absolute; overflow:hidden;}
+.main_header ul li{float:left;}
+.main_header .logo a,
+.main_header .sns a{
+   display:block;
+   background-size:contain;
+   background-position:center;
+   background-repeat: no-repeat;
+   transition-duration:.1s;
+}
+.main_header .logo a{background-image:url(/file/sell_header_logo.png);}
+.main_header .logo a:hover{background-image:url(/file/sell_header_logo_r.png);}
+
+.main_header .insta a{background-image:url(/file/header_btn_inst.png);}
+.main_header .fb a{background-image:url(/file/header_btn_fb.png);}
+.main_header .nv a{background-image:url(/file/header_btn_nv.png);}
+.main_header .kakao a{background-image:url(/file/header_btn_kakao.png);}
+
+.main_header .insta:hover a{background-image:url(/file/header_btn_inst_r.png);}
+.main_header .fb:hover a{background-image:url(/file/header_btn_fb_r.png);}
+.main_header .nv:hover a{background-image:url(/file/header_btn_nv_r.png);}
+.main_header .kakao:hover a{background-image:url(/file/header_btn_kakao_r.png);}
+
+.store_icon{
+   display:inline-block;
+   background-size:cover;
+   background-position:center;
+   transition-duration:.1s;
+   position:absolute;
+}
+.app_store{background-image: url(/file/sell_down_appstore.png);}
+.google_store{background-image: url(/file/sell_down_google.png);}
+.app_store:hover{background-image: url(/file/sell_down_appstore_r.png);}
+.google_store:hover{background-image: url(/file/sell_down_google_r.png);}
+
+/* 컨텐츠 영역 */
+.section .img{
+   position:absolute;
+   left:0; right:2%; bottom:0; top:0;
+
+   background-repeat:no-repeat;
+}
+/* main */
+.main{
+   background-image:url(/file/bg.png);
+   background-position:center;
+   background-size:cover;
+}
+.main .sub_title{margin-bottom:20px;}
+.main .img{
+   background-image:url(/file/sell_store_img.png), url(/file/sell_store_cloud_img.png);
+   -webkit-animation: main 15s infinite; /* Safari 4.0 - 8.0 */
+   animation: main 15s infinite;
+}
+
+/* 5초 */
+.time_5s{
+   background-color:#952434;
+}
+.time_5s .img{
+   right:0;
+   background-repeat: no-repeat;
+   background-position:bottom right;
+}
+.time_5s .img.active{
+   transition: background-size 1.7s ease-in;
+   -moz-transition: background-size 1.7s ease-in;
+   -ms-transition: background-size 1.7s ease-in;
+   -o-transition: background-size 1.7s ease-in;
+   -webkit-transition: background-size 1.7s ease-in;
+}
+
+/* 할일은 홍보뿐 */
+.promotion{
+   background-color:#383838;
+   background-image:url(/file/sell_rail_bg_left.png),
+      url(/file/sell_rail_bg_right.png);
+   background-repeat: no-repeat;
+}
+
+/* 나만의 컨텐츠 */
+.my_contents{
+   background-color:#341a38;
+}
+.my_contents .img{
+   right:0;
+   background-repeat: no-repeat;
+   background-position:bottom right;
+}
+.my_contents .img.active{
+   transition: background-size 1s ease-in;
+   -moz-transition: background-size 1s ease-in;
+   -ms-transition: background-size 1s ease-in;
+   -o-transition: background-size 1s ease-in;
+   -webkit-transition: background-size 1s ease-in;
+}
+
+/* 브랜드 */
+.brand{
+   background-color:#722250;
+   /*background-image:url(/file/brand_bg.png);*/
+   background-repeat: no-repeat;
+}
+.brand .img{
+   background: url(/file/icon.png) no-repeat;
+   top: 33%;
+   bottom: 10%;
+   left: 60%;
+   background-size:contain;
+   -webkit-animation: brand 2.5s infinite; /* Safari 4.0 - 8.0 */
+   animation: brand 2.5s infinite;
+}
+
+.brand .img.active{
+   transition: background-size 1s ease-in;
+   -moz-transition: background-size 1s ease-in;
+   -ms-transition: background-size 1s ease-in;
+   -o-transition: background-size 1s ease-in;
+   -webkit-transition: background-size 1s ease-in;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes brand {
+   0% {
+      transform: rotate(-10deg);
+   }
+   25% {
+      transform: rotate(10deg);
+   }
+   50% {
+      transform: rotate(-10deg);
+   }
+   75% {
+      transform: rotate(10deg);
+   }
+   100% {
+      transform: rotate(-10deg);
+   }
+}
+/* Standard syntax */
+@keyframes brand {
+   0% {
+      transform: rotate(-10deg);
+   }
+   25% {
+      transform: rotate(10deg);
+   }
+   50% {
+      transform: rotate(-10deg);
+   }
+   75% {
+      transform: rotate(10deg);
+   }
+   100% {
+      transform: rotate(-10deg);
+   }
+}
+
+/* 브랜드를 셀러스에 연결 */
+.brand_contact{background-color:#5b1624;}
+.brand_contact .img{
+   background-image:url(/file/percent.png);
+   background-repeat: no-repeat;
+   -webkit-animation: brand_contact 2s infinite; /* Safari 4.0 - 8.0 */
+   animation: brand_contact 2s infinite;
+}
+
+/* bottom */
+.bottom{background-color:#952434;}
+.bottom .title{margin:0 auto;}
+.bottom .store_icon{position:inherit;}
+.bottom .text_area{padding:0; text-align: center;}
+.bottom .google_store{margin-left:20px;}
+.bottom img{display:block; margin:0 auto;}
+.bottom .title, .bottom .sub_title, .bottom .text {text-align:center !important;}
+
+
+/* footer */
+.bg_opt{background-repeat:no-repeat;}
+.main_footer {
+   clear: both;
+   padding-top: 24px;
+   border-top: 1px solid #e2e3e5;
+   background-color:#fff;
+}
+
+.main_ft{position:absolute; bottom:0; left:0; right:0;}
+
+.main_footer.pc, .main_footer.pc a {
+   color: rgba(17, 17, 17, .6);
+   text-align: left;
+}
+
+.main_footer p {
+   margin: 0;
+}
+
+.main_footer>div {
+   overflow: hidden;
+   margin: 0 auto;
+   width: 940px;
+}
+
+.main_footer section.ft_left {
+   float: left;
+   width: 60%;
+}
+
+.main_footer section.m2ucs_wrap {
+   float: right;
+   width: 40%;
+}
+
+/** 좌측 푸터 **/
+
+.ft_left ul {
+   overflow: hidden;
+}
+
+.ft_left ul:nth-of-type(3) {
+   margin-bottom: 30px;
+}
+
+.ft_left ul li {
+   float: left;
+}
+
+/* 미투유 소개 */
+
+.m2u_info_link {
+   color: #1e354b;
+   font-size: .9em;
+}
+
+.m2u_info_link li {
+   margin-right: 11px;
+}
+
+.m2u_info_link a {
+   margin-right: 11px;
+   color: #1f354a;
+}
+
+/* 미투유정보 */
+
+.m2u_info_wrap {
+   margin: 22px 0;
+}
+
+.m2u_info_wrap li a.ft_logo {
+   display: block;
+   margin: 0 auto;
+   height: 75px;
+   text-align: center;
+}
+
+.m2u_info_wrap li a.ft_logo img {
+   display: inline-block;
+   height: 100%;
+}
+
+.m2u_info {
+   margin-left: 40px;
+   font-size: .85em;
+}
+
+.m2u_info_wrap address {
+   margin-top: 30px;
+   margin-bottom: 0;
+}
+
+/* 푸터 sns */
+
+.ft_sns_wrap {
+   margin-top: 20px;
+   text-align: center;
+}
+
+.ft_sns_wrap a {
+   display: inline-block !important;
+   overflow: hidden;
+   margin-right: 5px;
+   width: 29px;
+   height: 29px;
+   background-size: contain;
+   background-repeat: no-repeat;
+   text-indent: -5000px;
+}
+
+.ft_sns_wrap a:last-child {
+   margin-right: 0;
+}
+
+.ft_sns_wrap a:hover {
+   transition: all .2s ease-in 0s;
+   transform: rotate(360deg);
+}
+
+.ft_sns_wrap .fb {
+   background-image: url(/file/sns_fb.png);
+}
+
+.ft_sns_wrap .fb:hover {
+   background-image: url(/file/sns_fb_r.png);
+}
+
+.ft_sns_wrap .insta {
+   background-image: url(/file/sns_inst.png);
+}
+
+.ft_sns_wrap .insta:hover {
+   background-image: url(/file/sns_inst_r.png);
+}
+
+.ft_sns_wrap .blog {
+   background-image: url(/file/sns_nv.png);
+}
+
+.ft_sns_wrap .blog:hover {
+   background-image: url(/file/sns_nv_r.png);
+}
+
+.ft_sns_wrap .kakao {
+   background-image: url(/file/sns_kakao.png);
+}
+
+.ft_sns_wrap .kakao:hover {
+   background-image: url(/file/sns_kakao_r.png);
+}
+
+/* 푸터 카피라이터 */
+
+.main_footer.pc .copy {
+   margin-top: 44px;
+   letter-spacing: .1em;
+   font-size: .8em;
+}
+
+.comConfirm {
+   display: inline-block;
+   padding: 2px 5px;
+   background: #f8f8f8;
+   border: 1px solid #ccc;
+   margin-left: 5px;
+   border-radius: 4px;
+   color: #000;
+}
+
+a.comConfirm:focus {
+   text-decoration: none;
+}
+
+/** 우측 푸터 **/
+
+.m2ucs_wrap {}
+
+
+.m2ucs_wrap p {
+   font-size: .85em;
+}
+
+.m2ucs_wrap a {
+   display: block;
+   color: #88969f;
+   font-weight: 600;
+}
+
+.m2ucs_wrap>a:nth-of-type(1) {
+   margin-top: 10px;
+}
+
+@media screen and (min-width : 1000px){
+   /* pc 버전 */
+   .pc{display:block !important;}
+   .mo{display:none !important;}
+
+   /* font설정 */
+   .title{font-size:5em; margin-bottom:20px;}
+   .sub_title{font-size:3em;}
+   h3.text{font-size:2em;}
+   h4.text{font-size:2.5em;}
+
+   /* header */
+   .main_header{height:70px; padding:20px 0;}
+   .main_header .logo{left:10%;}
+   .main_header .logo a{width:88px; height:70px;}
+   .main_header ul{right:10%; margin-top:15px;}
+   .main_header .sns a{width:35px; height:35px; margin-left:15px;}
+
+   /* 스토어아이콘 */
+   .store_icon{width:150px; height:53px;}
+   .google_store{margin-left:170px;}
+
+   /* 컨텐츠 영역 */
+   .text_area{padding-left:10%;}
+   .time_5s .text_area,
+   .brand_contact .text_area{padding-left:25%;}
+
+   /* main */
+   .main .img{
+      background-size:60%;
+      background-position: bottom right, right;
+      -webkit-animation: main 15s infinite; /* Safari 4.0 - 8.0 */
+      animation: main 15s infinite;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes main {
+      0% {background-position:bottom right, 80%;}
+      50% {background-position:bottom right, right;}
+      100% {background-position:bottom right, 80%;}
+   }
+
+   /* Standard syntax */
+   @keyframes main {
+      0% {background-position:bottom right, 80%;}
+      50% {background-position:bottom right, right;}
+      100% {background-position:bottom right, 80%;}
+   }
+
+   /* 5초 */
+   .time_5s .img{
+      background-image:url(/file/sell_clock_img_pc.png);
+      background-size:20%;
+   }
+   .time_5s .img.active{background-size: 45%;}
+
+   /* 할일은 홍보뿐 */
+   .promotion{
+      background-size:40%, 14%;
+      background-position:-10% -30%, 95% 25%;
+      -webkit-animation: promotion_bg 2s infinite; /* Safari 4.0 - 8.0 */
+      animation: promotion_bg 2s infinite;
+   }
+   .promotion .img{
+      background-image:url(/file/sell_rail_img.png),
+         url(/file/sell_rail_register.png),
+         url(/file/sell_rail_shipping.png),
+         url(/file/sell_rail_doc.png);
+      background-position:-1% 101%, 17% 60%, 30% 62%, 51% 63%;
+      background-size:55%, 10%, 10% ,10%;
+      -webkit-animation: promotion 2s infinite; /* Safari 4.0 - 8.0 */
+      animation: promotion 2s infinite;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes promotion_bg {
+      0% {background-position:-10% -30%, 95% 25%;}
+      50% {background-position:-7% -30%, 95% 20%;}
+      100% {background-position:-10% -30%, 95% 25%;}
+   }
+   @keyframes promotion_bg {
+      0% {background-position:-10% -30%, 95% 25%;}
+      50% {background-position:-7% -30%, 95% 20%;}
+      100% {background-position:-10% -30%, 95% 25%;}
+   }
+
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes promotion {
+      0% {background-size:55%, 8%, 8% ,8%;}
+      50% {background-size:55%, 7%, 7% ,7%;}
+      100% {background-size:55%, 8%, 8% ,8%;}
+   }
+
+   /* Standard syntax */
+   @keyframes promotion {
+      0% {background-size:55%, 8%, 8% ,8%;}
+      50% {background-size:55%, 7%, 7% ,7%;}
+      100% {background-size:55%, 8%, 8% ,8%;}
+   }
+
+   .promotion .text_area {padding-right:20%;}
+   .promotion .title, .promotion .sub_title, .promotion .text {text-align:right !important;}
+   .promotion h3.text{margin-bottom:10px;}
+
+   /* 실시간정산(구 나만의 컨텐츠) */
+   .my_contents .img{
+      background-image:url(/file/pc_phone.png);
+      background-size:20%;
+      background-position: right bottom;
+   }
+   .my_contents .img.active{background-size: 45%;}
+
+   /* 브랜드 */
+   .brand{
+      background-size:30%;
+      background-position:80%;
+   }
+
+   /* 브랜드 셀러스에 연결 */
+   .brand_contact .img{
+      background-size:10%;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes brand_contact {
+      0% {background-position:75% 60%;}
+      50% {background-position:75% 55%;}
+      100% {background-position:75% 60%;}
+   }
+   /* Standard syntax */
+   @keyframes brand_contact {
+      0% {background-position:75% 60%;}
+      50% {background-position:75% 55%;}
+      100% {background-position:75% 60%;}
+   }
+
+   /* bottom */
+   .bottom .store_icon{margin-top:50px;}
+   .main_footer .lang{display:inline-block;}
+
+}
+
+
+/* 모바일 버전 */
+@media screen and (max-width : 999px){
+   .mo{display:block !important;}
+   .pc{display:none !important;}
+
+   /* appdown */
+   .app_down{
+      display:none;
+      /*      width:100px; height:40px;*/
+
+   }
+   .app_down.active{
+      display:block;
+      position:fixed;
+      top:18px; right:7%;
+   }
+   .app_down.active a{
+      display: inline-block;
+   }
+   .app_down.active li:last-child a{
+      width:100px; 
+      height:40px;
+      background-image:url(/file/sell_header_download.png);
+      background-size:contain;
+      background-repeat: no-repeat;
+   }
+   .app_down.active li:first-child a,.app_down.active li:nth-child(2) a{
+      width:35px; 
+      height:35px; 
+      margin-right:15px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+   }
+   /* font설정 */
+   .title{font-size:2em; margin:-40% 0 20px 0;}
+   .sub_title{font-size:1.5em;}
+   h3.text{font-size:1em;}
+   h4.text{font-size:1.2em;}
+
+   /* header */
+   .main_header{height:40px; padding:20px 0;}
+   .main_header .logo{left:7%;}
+   .main_header .logo a{width:50px; height:40px;}
+
+   /* 스토어아이콘 */
+   .store_icon{width:85px; height:30px;}
+   .google_store{margin-left:95px;}
+
+   /* 컨텐츠 영역 */
+   .text_area{padding-left:7%;}
+   /* main */
+   .main .img{
+      background-size:90%;
+      background-position: 100% 100%, 100% 82%;
+      -webkit-animation: main 5s infinite; /* Safari 4.0 - 8.0 */
+      animation: main 5s infinite;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes main {
+      0% {background-position:100% 100%, 70% 82%;}
+      50% {background-position:100% 100%, 100% 82%;}
+      100% {background-position:100% 100%, 70% 82%;}
+   }
+
+   /* Standard syntax */
+   @keyframes main {
+      0% {background-position:100% 100%, 70% 82%;}
+      50% {background-position:100% 100%, 100% 82%;}
+      100% {background-position:100% 100%, 70% 82%;}
+   }
+
+   /* 5초 */
+   .time_5s .img{
+      background-image:url(/file/sell_clock_img_m.png);
+      background-size:20%;
+   }
+   .time_5s .img.active{background-size: 60%;}
+
+   /* 할일은 홍보뿐 */
+   .promotion{
+      background-size:50%, 20%;
+      background-position:5% 15%, 95% 10%;
+      -webkit-animation: promotion_bg 3s infinite; /* Safari 4.0 - 8.0 */
+      animation: promotion_bg 3s infinite;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes promotion_bg {
+      0% {background-position:5% 15%, 95% 10%;}
+      50% {background-position:7% 13%, 92% 12%;}
+      100% {background-position:5% 15%, 95% 10%;}
+   }
+   @keyframes promotion_bg {
+      0% {background-position:5% 15%, 95% 10%;}
+      50% {background-position:7% 13%, 92% 12%;}
+      100% {background-position:5% 15%, 95% 10%;}
+   }
+
+   .promotion .img{
+      right:0;
+      background-image:url(/file/mo_sell_rail_img.png);
+      background-position: 101% 100% ;
+      background-size:90%;
+   }
+   .promotion h3.text{margin:10px auto;}
+
+   /* 실시간 정산 (구 나만의 컨텐츠) */
+   .my_contents .img{
+      background-image:url(/file/mobile_phone.png);
+      background-size:20%;
+      background-position: right bottom;
+   }
+   .my_contents .img.active{background-size: 80%;}
+
+
+   /* 브랜드 */
+   .brand{
+      background-size:60%;
+      background-position:80% 90%;
+   }
+   .brand .img{
+      top: 60%;
+      bottom: 10%;
+      left: 25%;
+      right: 5%;
+   }
+
+   /* 브랜드 셀러스에 연결 */
+   .brand_contact .img{
+      background-size:46%;
+   }
+   /* Safari 4.0 - 8.0 */
+   @-webkit-keyframes brand_contact {
+      0% {background-position:85% 90%;}
+      50% {background-position:85% 85%;}
+      100% {background-position:85% 90%;}
+   }
+   /* Standard syntax */
+   @keyframes brand_contact {
+      0% {background-position:85% 90%;}
+      50% {background-position:85% 85%;}
+      100% {background-position:85% 90%;}
+   }
+   /* bottom */
+   .bottom .title img{width:70%;}
+   .bottom .store_icon{margin-top:30px;}
+   .footer .lang img{display:inline-block;}
+
+   /* 푸터 */
+   .main_ft{
+      background-color:rgba(255,255,255,1);
+      font-size:.5em;
+      color:rgba(17,17,17,.4);
+   }
+   .main_ft a{color:rgba(17,17,17,.4);}
+   .m2u_info_link a{color:rgba(17,17,17,.7);}
+   .ft_left ul li {
+      /* display: inline-block; */
+      float: inherit;
+      margin-top: 0;
+      margin-bottom: 10px;
+   }
+   .ft_left ul li.copy {
+      font-size: .3em;
+   }
+   .main_footer section.ft_left {
+      width: 100%;
+   }
+   .footer {
+      overflow: hidden;
+      text-align: center;
+      padding-bottom:10px;
+   }
+   .m2u_info_link {
+      width: 100%;
+      text-align: center;
+   }
+   .m2u_info_link a, .m2u_info_link li {
+      display: inline-block;
+      margin-right: 5px;
+   }
+   .m2u_info_link li:last-child, .m2u_info_link li:last-child a {
+      margin-right: 0;
+   }
+   .m2u_info_link a {
+      font-size: .9em;
+   }
+   .m2u_info_wrap li:nth-of-type(1) {
+      float: inherit;
+      margin: 10px auto;
+   }
+   .m2u_info_wrap {
+      margin: 10px auto;
+      text-align: center;
+   }
+   .m2u_info_wrap address {
+      margin-top: 0;
+   }
+   .m2u_info {
+      margin-left: 0;
+      width: 100%;
+   }
+   .ft_sns_wrap {
+      float: inherit !important;
+      text-align: center;
+   }
+   .m2ucs_wrap {
+      float: inherit;
+      margin: 24px auto;
+      margin-bottom: 10px;
+      width: 100% !important;
+      text-align: center;
+   }
+   .m2ucs_wrap p {
+      word-break: keep-all;
+   }
+   .ft_more_area {
+      display: none;
+      overflow: hidden;
+   }
+   .footer .top {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      marign-top:20px;
+      background-image: url(/file/top.png);
+      background-position: center;
+      background-size: contain;
+   }
+   /* 모달 */
+   .modal-dialog {
+      width: 90%;
+   }
+   /* 토글버튼 */
+   .footer div {
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+   }
+   .ft_more_btn_area {
+      display: inline-block;
+      *display: inline;
+      overflow: hidden;
+      zoom: 1;
+   }
+   .footer img.powered {
+      display: block;
+      float: left;
+      margin-left: 35px;
+      width: 120px;
+   }
+   .toggle_btn {
+      display: inline-block;
+      float: left;
+      margin-top: 36px;
+      width: 40px;
+      height: 10px;
+      background-position: center;
+      background-size: contain;
+   }
+   .toggle_btn.icon_view {
+      background-image: url(/file/icon_view.png);
+   }
+   .toggle_btn.icon_hide {
+      background-image: url(/file/icon_hide.png);
+   }
+   .ft_left img{width:100px;}
+}
+
+@media screen  and (max-width : 999px) and (max-height : 800px)  {
+   /** 아이폰se, 아이폰 6 기준 **/
+}
+
+@media screen  and (min-height : 802px)  and (max-width : 999px) {
+   /* 아이폰x */
+}

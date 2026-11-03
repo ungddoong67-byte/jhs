@@ -1,0 +1,36 @@
+title: "화성퀵서비스 신속하고 안전하게 배송합니다"
+url: "https://화성퀵서비스.5282quick.com"
+description: "화성특례시, 동탄구, 병점구, 효행구,만세구 등 화성 전 지역 24시 신속한 배송 전문. 오토바이퀵, 다마스퀵, 라보용달, 1톤용달 즉시 배차."
+baseurl: ""
+
+# 미래 날짜의 포스트도 표시하도록 설정 (오토포스팅 최적화)
+future: true
+timezone: Asia/Seoul
+
+# 한 페이지에 10개씩 끊어서 보여주기 설정
+paginate: 10
+paginate_path: "/page:num/"
+
+# SEO 최적화 주소 설정
+permalink: /:path/
+
+# 빌드 및 렌더링 설정
+markdown: kramdown
+highlighter: rouge
+
+# 필수 플러그인 (Sitemap은 네이버 수집에 필수입니다)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+# 동네별 타겟 페이지(Towns) 활성화
+collections:
+  towns:
+    output: true
+
+# 피드 설정 (RSS 피드를 통해 네이버에 신규 글 알림)
+feed:
+  path: /feed.xml
+
+# 구글/네이버 웹마스터 도구 인증용 주석: 2026-03-09-Pyeongtaek-Final
